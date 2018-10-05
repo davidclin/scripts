@@ -1,0 +1,7 @@
+Example cron jobs
+
+*/5 * * * * ~/aws-scripts-mon/mon-put-instance-data.pl --disk-space-util --disk-path=/ --disk-path=/var/atlassian --from-cron
+
+0 */8 * * * /usr/local/bin/backup.sh
+
+* * * * * /usr/local/bin/script.sh

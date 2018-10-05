@@ -2,9 +2,9 @@ Example cron jobs
 
 */5 * * * * ~/aws-scripts-mon/mon-put-instance-data.pl --disk-space-util --disk-path=/ --disk-path=/var/atlassian --from-cron
 
-0 */8 * * * /usr/local/bin/backup.sh
+0 */8 * * * /usr/local/bin/backup_vpn.sh
+0 7 1 * * /usr/local/bin/truncate_backuplog.sh
 
 * * * * * /usr/local/bin/script.sh
 
-0 */8 * * * /usr/local/bin/truncate.sh
 

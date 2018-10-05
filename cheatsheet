@@ -5,3 +5,6 @@ Example cron jobs
 0 */8 * * * /usr/local/bin/backup.sh
 
 * * * * * /usr/local/bin/script.sh
+
+0 */8 * * * /usr/local/bin/truncate.sh
+

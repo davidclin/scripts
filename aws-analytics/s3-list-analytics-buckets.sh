@@ -1,4 +1,12 @@
 #!/usr/bin/env bash
+#
+# This script should be run within a virtual environment with
+# latest version of awscli and boto3 using python2.7
+#
+# Tested using:
+#   (aws-cli-virtualenv) ubuntu@ip-10-100-3-147:~/scripts$ aws --version
+#   aws-cli/1.16.65 Python/2.7.12 Linux/4.4.0-138-generic botocore/1.12.55
+
 
 buckets=$(aws s3api list-buckets --query Buckets[].Name --output text)
 

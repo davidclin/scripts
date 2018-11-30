@@ -1,6 +1,5 @@
 
 # Example of script that executes a command within a virtual environment.
-## Cloud Custodian CLI is used here as an example.
 
 <pre>
 #!/bin/bash

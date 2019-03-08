@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ACCOUNTS=default
+ACCOUNTS=default,other-aws-cli-profile-names-go-here
 
 # Loop through the ACCOUNTS array
 for i in $(echo $ACCOUNTS | sed "s/,/ /g")

@@ -1,4 +1,8 @@
 #!/bin/bash
+# To concatenate output in order:
+#   ls -1 *.txt | sort | while read fn ; do cat "$fn" >> output.md; done
+# To concatenate by time:
+#   ls -1t *.txt | while read fn ; do cat "$fn" >> output.md; done
 
 ACCOUNTS=default,other-aws-cli-profile-names-go-here
 

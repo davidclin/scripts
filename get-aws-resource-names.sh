@@ -32,15 +32,29 @@ do
    echo 'IAM roles' >> $i.txt
    aws iam list-roles --profile $i | grep RoleName >> $i.txt
 
+   echo '' >> $i.txt
+
    echo 'Lambdas' >> $i.txt
    aws lambda list-functions --profile $i --region us-east-1 | grep FunctionName >> $i.txt
 
+   echo '' >> $i.txt
 
    echo 'RDS Instances' >> $i.txt
    aws rds describe-db-instances --profile $i --region us-east-1 | grep DBName >> $i.txt
+
+   echo '' >> $i.txt
+
+   echo 'SQS' >> $i.txt
+   aws sqs list-queues --profile $i --region us-east-1 | grep https  >> $i.txt
 
    echo '</pre>' >> $i.txt
 
 done
 
-echo 'done!'
+echo 'Removing output.md'
+rm output.md
+
+echo 'Creating digest'
+ls -1 *.txt | sort | while read fn ; do cat "$fn" >> output.md; done
+
+echo 'Job completed!'

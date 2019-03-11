@@ -20,7 +20,7 @@ do
    echo '' >> $i.txt
 
    echo 'IAM Users' >> $i.txt
-   aws iam list-users --profile $i | grep Users >> $i.txt
+   aws iam list-users --profile $i | grep UserName >> $i.txt
 
    echo '' >> $i.txt
 

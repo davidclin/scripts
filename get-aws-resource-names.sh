@@ -32,6 +32,13 @@ do
    echo 'IAM roles' >> $i.txt
    aws iam list-roles --profile $i | grep RoleName >> $i.txt
 
+   echo 'Lambdas' >> $i.txt
+   aws lambda list-functions --profile $i --region us-east-1 | grep FunctionName >> $i.txt
+
+
+   echo 'RDS Instances' >> $i.txt
+   aws rds describe-db-instances --profile $i --region us-east-1 | grep DBName >> $i.txt
+
    echo '</pre>' >> $i.txt
 
 done

@@ -26,7 +26,7 @@ import boto3
 from botocore.exceptions import ClientError
 
 # ***************************  REQUIRED  **********************************
-# Assign bucket names to bucket_name.
+# Assign bucket name to bucket_name.
 #
 account_profile = 'Account-Name-Goes-Here'
 account_id = 1234567890

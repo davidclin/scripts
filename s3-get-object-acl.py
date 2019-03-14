@@ -48,7 +48,7 @@ def get_object_acl(bucket_name, object_name):
     """
 
     # Retrieve the bucket ACL
-    s3 = boto3.client('s3')  # this was the original s3 resource without sts
+    s3 = boto3.client('s3')  
 
     try:
         response = s3.get_object_acl(Bucket=bucket_name, Key=object_name)

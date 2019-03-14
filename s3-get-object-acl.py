@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 #
 # Description: Retrieves list of all objects and group ACL settings.
-#              To be used for tri-na.
 #
 #              If an object's Group permission is set,
 #

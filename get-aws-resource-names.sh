@@ -6,6 +6,8 @@
 #   rm output.md
 #   ls -1 *.txt | while read fn ; do cat "$fn" > output.md; done
 
+ACCOUNTS=aws_profile_name_1,aws_profile_name_2 (provide list of aws profile names from your ~/.aws/config)
+
 # Loop through the ACCOUNTS array
 for i in $(echo $ACCOUNTS | sed "s/,/ /g")
 do

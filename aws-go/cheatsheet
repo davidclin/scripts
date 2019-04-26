@@ -1,0 +1,51 @@
+-------------------------------------------
+Random Notes and Blocks for Cutting/Pasting
+-------------------------------------------
+
+limit -n 1048576
+ulimit -a
+
+aws s3 cp test-1.txt s3://test-bucket/ --profile sandbox 
+
+
+go run bucket-owner-full-control.go --profile sandbox --bucket test-bucket --region us-east-1
+./bucket-owner-full-control --profile sandbox --bucket test-bucket --region us-east-1
+
+
+./print-results.sh > s3-acl-fix-bucket-owner-full-control-test-bucket.md &
+
+
+ps -ax | grep print-results.sh
+
+
+TIPS and TRICKS
+- if you revise the script, you can build via 'go build <script_name>'
+- set --workers to 250 so sessions don't time out
+- write output to >> output.txt file and use tail -f to watch progress
+- set putty Connection setting to send keepaives so connection doesn't time out
+- set `ulimit -n 1048576'
+  useful comands: ulimit -a , ulimit -Hn
+* use aws s3api get-bucket-policy command to find buckets with bucket policies
+- use the Dashboard and/or aws s3 get-bucket-policy-status to find public buckets
+- add buckets that are public or have bucket policies to blacklist so we don't scan
+- use vim replace and delete lines trick to quickly copy/paste list to script
+
+
+
+To increase up to the hard limit, you can run: "ulimit -Sn 4096" (to find out the hard limit you can run "uli
+mit -Hn"). If I recall correctly, though, even 4,096 wasn't enough. I ended up increasing my hard limit to so
+mething crazy like 1,048,576. To increase the hard limit you'll have to modify /etc/security/limits.conf.
+
+
+ulimit -n 1048576
+
+Count all open file handles
+lsof | wc -l
+
+useful : https://www.cyberciti.biz/tips/linux-procfs-file-descriptors.html
+
+
+Using Cloud Custodian C7N-ORG Tool to Generate Accounts Configuration File
+/home/ubuntu/cloud-custodian/tools/c7n_org/scripts/
+python orgaccounts.py -f accounts.yml
+

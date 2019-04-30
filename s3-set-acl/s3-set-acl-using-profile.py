@@ -8,16 +8,21 @@ from botocore.exceptions import ClientError, ParamValidationError
 counter = 0
 
 key=[
-"first-bucket-key-goes-here",
-"second-bucket-key-goes-here",
-"etc"
+"folder1/test-1.txt",
+"folder2/test-2.txt"
 ]
 
 
 if __name__ == "__main__":
-    client = boto3.client('s3')
-    bucketname = "miru-us-east-1"
+    # example using a profile named 'miru'
+    miru = boto3.session.Session(profile_name='miru')
+    miru_client = miru.client('s3')
 
+    # example using default profile
+    client = boto3.client('s3')
+
+    # bucket name
+    bucketname = "miru-us-east-1"
 try:
     for i in key:
         counter += 1
@@ -25,7 +30,13 @@ try:
         print ""
         print "Key is: " + str(i)
         print ""
-        print client.put_object_acl(Bucket=bucketname,Key=i,ACL='bucket-owner-full-control',)
+
+        # default profile
+        # print client.put_object_acl(Bucket=bucketname,Key=i,ACL='bucket-owner-full-control',)
+
+        # invoke api using different profile
+        print miru_client.put_object_acl(Bucket=bucketname,Key=i,ACL='bucket-owner-full-control',)
+
         print ""
         print "------------------"
         print ""

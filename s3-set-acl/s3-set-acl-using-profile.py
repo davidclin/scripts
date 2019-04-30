@@ -8,7 +8,9 @@ from botocore.exceptions import ClientError, ParamValidationError
 counter = 0
 
 key=[
-
+"first-bucket-key-goes-here",
+"second-bucket-key-goes-here",
+"etc"
 ]
 
 

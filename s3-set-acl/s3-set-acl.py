@@ -16,8 +16,8 @@ if __name__ == "__main__":
     client = boto3.client('s3')
     bucketname = "miru-us-east-1"
 
-try:
-    for i in key:
+for i in key:
+    try:
         counter += 1
         print "Count is: " + str(counter)
         print ""
@@ -27,5 +27,7 @@ try:
         print ""
         print "------------------"
         print ""
-except ClientError as e:
+    except ClientError as e:
         print("Unexpected error: %s" % e)
+        print ""
+        print "------------------"
